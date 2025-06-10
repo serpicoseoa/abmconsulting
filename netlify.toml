@@ -1,0 +1,166 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Trailing slash redirects - force all URLs to have trailing slashes
+[[redirects]]
+  from = "/en"
+  to = "/en/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sq"
+  to = "/sq/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/services"
+  to = "/en/services/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sq/services"
+  to = "/sq/services/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/pricing"
+  to = "/en/pricing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sq/pricing"
+  to = "/sq/pricing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/business-formation"
+  to = "/en/business-formation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sq/business-formation"
+  to = "/sq/business-formation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/about"
+  to = "/en/about/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sq/about"
+  to = "/sq/about/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/contact"
+  to = "/en/contact/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sq/contact"
+  to = "/sq/contact/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/thank-you"
+  to = "/en/thank-you/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sq/thank-you"
+  to = "/sq/thank-you/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/privacy"
+  to = "/en/privacy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sq/privacy"
+  to = "/sq/privacy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/faq"
+  to = "/en/faq/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sq/faq"
+  to = "/sq/faq/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/blog"
+  to = "/en/blog/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sq/blog"
+  to = "/sq/blog/"
+  status = 301
+  force = true
+
+# Generic trailing slash redirect for blog posts and categories
+[[redirects]]
+  from = "/en/blog/*"
+  to = "/en/blog/:splat/"
+  status = 301
+  force = true
+  conditions = {Path = "!/en/blog/*/"}
+
+[[redirects]]
+  from = "/sq/blog/*"
+  to = "/sq/blog/:splat/"
+  status = 301
+  force = true
+  conditions = {Path = "!/sq/blog/*/"}
+
+# Legacy redirects
+[[redirects]]
+  from = "https://tiny-alfajores-5759e2.netlify.app/*"
+  to = "https://abmconsulting.com/:splat/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://abmconsultingks.com/*"
+  to = "https://abmconsulting.com/:splat/"
+  status = 301
+  force = true
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
